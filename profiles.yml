@@ -1,0 +1,13 @@
+lakehouse:
+  outputs:
+    dev:
+      account: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_ACCOUNT') }}"
+      database: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_DB') }}"
+      password: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_PASS') }}"
+      user: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_USER') }}"
+      role: DATAENGINEER
+      schema: DBT
+      threads: 4
+      type: snowflake
+      warehouse: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_WH') }}"
+  target: dev
